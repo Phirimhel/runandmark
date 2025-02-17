@@ -6,7 +6,7 @@ class HeroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
-        tag: 'login_screen',
+        tag: 'login_screen huin',
         child: Padding(
           padding: const EdgeInsets.all(5.0),
           child: ClipRRect(
