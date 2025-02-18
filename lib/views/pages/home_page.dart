@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:runandmark/data/constants.dart';
+import 'package:runandmark/views/pages/profile_page.dart';
 import 'package:runandmark/views/widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,10 +16,12 @@ class HomePage extends StatelessWidget {
           children: [
             Positioned.fill(
               child: Transform.rotate(
-                  angle: 2.2,
-                  child: Lottie.asset('assets/lotties/welcome.json',
-                      fit: BoxFit.cover // ✅ Чтобы анимация не искажалась
-                      )),
+                angle: 2.2,
+                child: Lottie.asset(
+                  'assets/lotties/welcome.json',
+                  fit: BoxFit.cover, // ✅ Чтобы анимация не искажалась
+                ),
+              ),
             ),
             Column(
               children: [
@@ -33,7 +36,17 @@ class HomePage extends StatelessWidget {
                           Row(
                             children: [
                               InkWell(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        // loadingMainImageNotifier.value = true;
+                                        return ProfilePage();
+                                      },
+                                    ),
+                                  );
+                                },
                                 borderRadius: BorderRadius.circular(
                                     50), // Ensures ripple effect is round
                                 child: Container(
@@ -42,9 +55,6 @@ class HomePage extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     color: Colors.white10,
                                     shape: BoxShape.circle, // Makes it round
-                                    // image: DecorationImage(
-                                    //   image: AssetImage(imagePath),
-                                    //   fit: BoxFit.cover, // Ensures the image fills the circle
                                   ),
                                 ),
                               ),
@@ -110,8 +120,7 @@ class HomePage extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 SizedBox(
-                  width: double.infinity,
-                  // Makes button full-width
+                  width: double.infinity, // Makes button full-width
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -129,7 +138,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                HeroWidget()
+                // HeroWidget(),
               ],
             ),
           ],

@@ -14,12 +14,16 @@ class LoginPage extends StatelessWidget {
         children: [
           /// 🎬 **Фоновая Lottie-анимация**
           Positioned.fill(
-            child: Transform.rotate(
+            child: Align(
+              alignment: Alignment.center,
+              child: Transform.rotate(
                 angle: 2.7,
                 child: Lottie.asset(
                   'assets/lotties/welcome.json',
-                  fit: BoxFit.fill, // ✅ Чтобы анимация не искажалась
-                )),
+                  fit: BoxFit.cover, // ✅ Используем BoxFit.cover
+                ),
+              ),
+            ),
           ),
 
           /// 🟢 **Карта с формой логина**

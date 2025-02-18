@@ -26,11 +26,10 @@ class WelcomePage extends StatelessWidget {
 
           Center(
             child: Padding(
-              padding: const EdgeInsets.all(60.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min, // 🔹 Высота только по контенту
                 children: [
-                  HeroWidget(),
                   Text(
                     'RUN',
                     style: TextStyle(
