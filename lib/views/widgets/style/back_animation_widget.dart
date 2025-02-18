@@ -8,12 +8,11 @@ class BackAnimationWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: ClipRect(
-        // 🔹 Обрезает выходящие за границы части
         child: Transform.rotate(
-          angle: -1.2,
+          angle: -1.0,
           child: Lottie.asset(
             'assets/lotties/welcome.json',
-            fit: BoxFit.cover, // ✅ Чтобы анимация оставалась в границах
+            fit: BoxFit.cover,
           ),
         ),
       ),

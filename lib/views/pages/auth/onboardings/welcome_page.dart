@@ -27,38 +27,41 @@ class WelcomePage extends StatelessWidget {
                     children: [
                       AppNameWidget(),
                       SizedBox(height: 16),
-                      Opacity(
-                        opacity: 0.9,
-                        child: Column(
-                          children: [
-                            ButtonsListWidget.buttonType(
-                              chosenButton: ChosenButton.getStarted,
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return OnboardingPage();
-                                    },
-                                  ),
-                                );
-                              },
-                            ),
-                            SizedBox(height: 16),
-                            ButtonsListWidget.buttonType(
-                              chosenButton: ChosenButton.login,
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) {
-                                      return LoginPage();
-                                    },
-                                  ),
-                                );
-                              },
-                            ),
-                          ],
+                      SizedBox(
+                        height: 260.0,
+                        child: Opacity(
+                          opacity: 0.9,
+                          child: Column(
+                            children: [
+                              ButtonsListWidget.buttonType(
+                                chosenButton: ChosenButton.getStarted,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return OnboardingPage();
+                                      },
+                                    ),
+                                  );
+                                },
+                              ),
+                              SizedBox(height: 16),
+                              ButtonsListWidget.buttonType(
+                                chosenButton: ChosenButton.login,
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) {
+                                        return LoginPage();
+                                      },
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],

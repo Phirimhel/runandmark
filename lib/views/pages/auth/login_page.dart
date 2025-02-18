@@ -9,7 +9,6 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
       body: Stack(
         children: [
           BackAnimationWidget(),
@@ -19,7 +18,7 @@ class LoginPage extends StatelessWidget {
               child: Opacity(
                 opacity: 0.95,
                 child: Column(
-                  //mainAxisSize: MainAxisSize.min,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     AppNameWidget(),
                     SizedBox(height: 10),

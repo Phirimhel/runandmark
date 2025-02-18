@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:runandmark/data/notifiers.dart';
 import 'package:runandmark/views/pages/auth/onboardings/welcome_page.dart';
 import 'package:runandmark/views/widgets/style/back_animation_widget.dart';
@@ -10,11 +9,6 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Профиль"),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(133, 0, 27, 25),
-      ),
       body: Stack(
         children: [
           /// 🎬 **Фоновая анимация**
@@ -66,20 +60,18 @@ class ProfilePage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   ),
                 ),
-                SizedBox(height: 400),
 
                 /// 🚪 **Кнопка выхода**
                 ElevatedButton.icon(
                   onPressed: () {
                     selectedPageNotifier.value = 0;
-                    Navigator.pushReplacement(
+                    Navigator.pushAndRemoveUntil(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          loadingMainImageNotifier.value = false;
-                          return WelcomePage();
-                        },
-                      ),
+                      MaterialPageRoute(builder: (context) {
+                        loadingMainImageNotifier.value = false;
+                        return WelcomePage();
+                      }),
+                      (route) => false, // Removes all previous routes
                     );
                   },
                   icon: Icon(Icons.logout),

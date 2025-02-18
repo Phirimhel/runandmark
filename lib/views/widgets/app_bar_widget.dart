@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:runandmark/data/notifiers.dart';
 import 'package:runandmark/views/pages/settings_page.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -24,18 +23,18 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
           icon: Icon(Icons.settings),
         ),
       ],
-      leading: IconButton(
-        icon: ValueListenableBuilder(
-          valueListenable: isDarkModeNotifier,
-          builder: (context, isDarkMode, child) {
-            return Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode);
-          },
-        ),
-        onPressed: () {
-          print(isDarkModeNotifier.value);
-          isDarkModeNotifier.value = !isDarkModeNotifier.value;
-        },
-      ),
+      // leading: IconButton(
+      //   // icon: ValueListenableBuilder(
+      //   //   valueListenable: isDarkModeNotifier,
+      //   //   builder: (context, isDarkMode, child) {
+      //   //     return Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode);
+      //   //   },
+      //   ),
+      //   onPressed: () {
+      //     print(isDarkModeNotifier.value);
+      //     isDarkModeNotifier.value = !isDarkModeNotifier.value;
+      //   },
+      // ),
     );
   }
 }

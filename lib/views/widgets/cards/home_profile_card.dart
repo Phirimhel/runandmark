@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:runandmark/data/constants.dart';
+import 'package:runandmark/data/notifiers.dart';
 
 class HomeProfileCardWidget extends StatelessWidget {
   const HomeProfileCardWidget({super.key});
@@ -15,7 +16,9 @@ class HomeProfileCardWidget extends StatelessWidget {
             Row(
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    selectedPageNotifier.value = 1;
+                  },
                   borderRadius: BorderRadius.circular(50),
                   child: Container(
                     width: 100,

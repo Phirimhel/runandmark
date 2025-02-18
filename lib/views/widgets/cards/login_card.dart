@@ -77,14 +77,13 @@ class LoginCardWidget extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
                 ),
                 onPressed: () {
-                  Navigator.pushReplacement(
+                  Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        loadingMainImageNotifier.value = true;
-                        return WidgetTree();
-                      },
-                    ),
+                    MaterialPageRoute(builder: (context) {
+                      loadingMainImageNotifier.value = false;
+                      return WidgetTree();
+                    }),
+                    (route) => false, // Removes all previous routes
                   );
                 },
                 child: Text("Login"),
