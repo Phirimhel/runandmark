@@ -55,12 +55,12 @@ class _RunnerPageState extends State<RunnerPage> {
     );
 
     // Enable location tracking with pulsing effect
-    mapboxMapController?.location.updateSettings(
-      mp.LocationComponentSettings(
+    mapboxMapController?.location.updateSettings(mp.LocationComponentSettings(
         enabled: true,
         pulsingEnabled: true,
-      ),
-    );
+        puckBearingEnabled: true,
+        pulsingColor: Color.fromRGBO(50, 192, 147, 1).value,
+        pulsingMaxRadius: 50.0));
 
     // Fly to user's location after 400ms delay
     Future.delayed(
@@ -71,9 +71,12 @@ class _RunnerPageState extends State<RunnerPage> {
           mapboxMapController?.flyTo(
             mp.CameraOptions(
               center: mp.Point(
-                coordinates: mp.Position(position.longitude, position.latitude),
+                coordinates: mp.Position(
+                  position.longitude,
+                  position.latitude,
+                ),
               ),
-              zoom: 12, // Zoom in on user's location
+              zoom: 16, // Zoom in on user's location
               bearing: 180,
               pitch: 30, // Tilt the map
             ),
