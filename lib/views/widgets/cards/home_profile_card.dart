@@ -59,7 +59,7 @@ class HomeProfileCardWidget extends StatelessWidget {
               height: 40,
               child: Center(
                 child: Text(
-                  'balance: 29338 RUN',
+                  'balance: 293 RUN',
                   style: KtexStyle.tokensText,
                 ),
               ),
